@@ -18,8 +18,14 @@ jobs:
     needs: test # running sequential -> takes longer
     runs-on: ubuntu-latest
     steps:
-      - name: (Debug) List Repository Contents
-        run: ls -a
+      - name: Get Code
+        uses: actions/checkout@v3 # actions uses, commands run
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+      - name: Install dependencies
+        run: npm ci
       - name: Build Project
         run: npm run build
       - name: Deploy Project to Host
