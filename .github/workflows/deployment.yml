@@ -18,6 +18,8 @@ jobs:
     needs: test # running sequential -> takes longer
     runs-on: ubuntu-latest
     steps:
+      - name: (Debug) List Repository Contents
+        run: ls -a
       - name: Build Project
         run: npm run build
       - name: Deploy Project to Host
