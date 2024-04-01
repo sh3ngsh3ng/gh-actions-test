@@ -1,4 +1,4 @@
-name: Testing Workflow
+name: Unit Test Workflow
 on: workflow_dispatch # manually trigger the event
 jobs:
   first-job: # job name
